@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+</head>
+<body>
+    <div id="music-player">
+        <h1>Music Player</h1>
+        <audio controls id="audio-player">
+            <source src="{{ url_for('download_file', filename=random_song) }}" type="audio/mp3" id="audio-source">
+            Your browser does not support the audio element.
+        </audio>
+        <p>Now playing: <strong>{{ random_song }}</strong></p>
+        <button onclick="playRandom()">Play Random Song</button>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
